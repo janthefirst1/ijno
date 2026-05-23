@@ -16,11 +16,6 @@
     <Product>$(AssemblyName)</Product>
     <RootNamespace>Bloxstrap</RootNamespace>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Remove="Resources\BootstrapperStyles\TerminalDialog\Powershell.png" />
-    <None Remove="Resources\Fonts\CascadiaCode.ttf" />
-  </ItemGroup>
     
   <ItemGroup>
     <Resource Include="Bloxstrap.ico" />
