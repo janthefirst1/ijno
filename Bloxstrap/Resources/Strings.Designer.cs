@@ -2871,7 +2871,7 @@ namespace Bloxstrap.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enable Acrylic backdrop for the settings menu and other dialogs..
+        ///   Looks up a localized string similar to Enable Acrylic backdrop for the settings menu and other dialogs. (Note: Does not work on Windows 11).
         /// </summary>
         public static string Menu_Appearance_Acrylic_Description {
             get {
