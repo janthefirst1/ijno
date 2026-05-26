@@ -27,7 +27,7 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid Grid.Row="0">
-            <ui:TitleBar x:Name="TerminalTitleBar" Background="Transparent" Height="40" ShowMaximize="True" ShowMinimize="True" ShowClose="True" Loaded="TerminalTitleBar_Loaded" CloseClicked="UiWindow_Closing" CanMaximize="False" />
+            <ui:TitleBar x:Name="TerminalTitleBar" Background="{Binding TerminalTitleBarBackground}" Height="40" ShowMaximize="True" ShowMinimize="True" ShowClose="True" Loaded="TerminalTitleBar_Loaded" CloseClicked="UiWindow_Closing" CanMaximize="False" />
             
             <TabControl Grid.Column="0" Margin="12,0,0,0" Height="32" Width="200" HorizontalAlignment="Left" VerticalAlignment="Bottom" Background="Transparent" BorderBrush="Transparent" Padding="0">
                 <TabItem Background="Black" BorderBrush="Transparent" BorderThickness="0" Width="200">
@@ -65,7 +65,7 @@
                 </TabItem>
             </TabControl>
         </Grid>
-        <Grid x:Name="MainTerminal" Grid.Row="1" Background="Black">
+        <Grid Background="{Binding MainTerminalBackground}" Grid.Row="1">
             <ScrollViewer x:Name="ScrollViewer" Margin="12" FontSize="16" ScrollChanged="ScrollViewer_ScrollChanged">
                 <StackPanel>
                     <TextBlock Text="Windows Powershell" Foreground="White" Opacity="0.95" TextWrapping="Wrap" FontFamily="{StaticResource CascadiaCode}" />
@@ -73,7 +73,7 @@
                     <TextBlock />
                     <TextBlock Text="Try the new cross-platform PowerShell https://aka.ms/pscore6" Foreground="White" Opacity="0.95" TextWrapping="Wrap" FontFamily="{StaticResource CascadiaCode}" />
                     <TextBlock />
-                    <TextBlock x:Name="LaunchArgsTextBox" Text="PS> ./Fishstrap.exe " TextTrimming="CharacterEllipsis" Height="18" Foreground="White" Opacity="0.95" TextWrapping="Wrap" FontFamily="{StaticResource CascadiaCode}" />
+                    <TextBlock x:Name="LaunchArgsTextBox" Text="{Binding LaunchArgText}" TextTrimming="CharacterEllipsis" Height="18" Foreground="White" Opacity="0.95" TextWrapping="Wrap" FontFamily="{StaticResource CascadiaCode}" />
                     <TextBlock />
                     <TextBlock Text="{Binding Message}" Foreground="White" Opacity="0.95" TextWrapping="Wrap" FontFamily="{StaticResource CascadiaCode}" />
                 </StackPanel>

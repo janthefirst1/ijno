@@ -10,6 +10,9 @@ using System.Windows.Media;
 
 namespace Bloxstrap.UI.Elements.Bootstrapper
 {
+    /// <summary>
+    /// Interaction logic for TerminalDialog.xaml
+    /// </summary>
     public partial class TerminalDialog : IBootstrapperDialog
     {
         private readonly TerminalDialogViewModel _viewModel;
@@ -128,17 +131,6 @@ namespace Bloxstrap.UI.Elements.Bootstrapper
             _viewModel = new TerminalDialogViewModel(this);
             DataContext = _viewModel;
 
-            if (App.Settings.Prop.UseAcrylicBackground)
-            {
-                MainTerminal.Background = new SolidColorBrush(Color.FromArgb(App.Settings.Prop.AcrylicBackgroundOpacity, 32, 32, 32));
-
-                if (App.Settings.Prop.Theme.GetFinal() == Enums.Theme.Light)
-                    TerminalTitleBar.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
-                else
-                    TerminalTitleBar.Background = new SolidColorBrush(Color.FromArgb(255, 51, 51, 51));
-            }
-
-            LaunchArgsTextBox.Text += App.LaunchSettings.RobloxLaunchMode == LaunchMode.Player ? "-player" : "-studio";
             Title = App.Settings.Prop.BootstrapperTitle;
             Icon = App.Settings.Prop.BootstrapperIcon.GetIcon().GetImageSource();
         }
@@ -173,12 +165,6 @@ namespace Bloxstrap.UI.Elements.Bootstrapper
                         button.Height = 40;
                 }
             }
-        }
-
-        private void UiWindow_Closing(object sender, CancelEventArgs e)
-        {
-            if (!_isClosing)
-                Bootstrapper?.Cancel();
         }
 
         #region IBootstrapperDialog Methods
