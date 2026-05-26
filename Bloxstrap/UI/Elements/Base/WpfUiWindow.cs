@@ -62,10 +62,7 @@ namespace Bloxstrap.UI.Elements.Base
                 this.ExtendsContentIntoTitleBar = true;
                 this.WindowBackdropType = BackgroundType.Mica;
 
-                if (App.Settings.Prop.Theme.GetFinal() == Enums.Theme.Light)
-                    this.Resources["MainWindowBackgroundBrush"] = new SolidColorBrush(Color.FromArgb(255, 250, 250, 250));
-                else
-                    this.Resources["MainWindowBackgroundBrush"] = new SolidColorBrush(Color.FromArgb(255, 32, 32, 32));
+                this.Resources["MainWindowBackgroundBrush"] = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0));
             }
 
             Application.Current.Resources.MergedDictionaries[customThemeIndex] = dict;
